@@ -2,7 +2,7 @@
 % Please edit documentation in R/modelselection_glm.R
 \name{modelselect.glm}
 \alias{modelselect.glm}
-\title{Title: Model selection for generalized linear models}
+\title{Title: Variable selection for generalized linear models}
 \usage{
 modelselect.glm(
   formula,
@@ -48,5 +48,5 @@ The specification \code{first*second} indicates the cross of \code{first} and \c
 The function \code{glm.best} is used to obtain the linear fitting to the best model by posterior probability or by controlling variables' posterior inclusion probabilities.
 }
 \description{
-Description: use BIC to do model selection.
+Description: use BIC to do variable selection.
 }

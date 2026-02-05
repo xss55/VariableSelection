@@ -1,6 +1,6 @@
-#' Title: Model selection for generalized linear models
+#' Title: Variable selection for generalized linear models
 #'
-#' Description: use BIC to do model selection.
+#' Description: use BIC to do variable selection.
 #'
 #' @param formula an object of class "formula": a symbolic description of the model to be fitted.
 #'                A typical model has the form `response ~ terms` where response is the (numeric) `response` vector and terms is a series of terms which specifies a linear predictor for `response`.

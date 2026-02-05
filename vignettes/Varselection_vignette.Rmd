@@ -1,5 +1,5 @@
 ---
-title: "Model selection for linear models and generalized linear models with BIC-based posterior probability"
+title: "Variable selection for linear models and generalized linear models with BIC-based posterior probability"
 output: 
   rmarkdown::html_vignette:
     toc: true
@@ -7,7 +7,7 @@ output:
 author: Allison N. Tegge, Shuangshuang Xu, and Marco A. R. Ferreira
 
 vignette: >
-  %\VignetteIndexEntry{Model selection for linear models and generalized linear models with BIC-based posterior probability}
+  %\VignetteIndexEntry{Variable selection for linear models and generalized linear models with BIC-based posterior probability}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -20,21 +20,21 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(modelselection)
+library(VariableSelection)
 ```
 
 
 
 # Introduction
 
-Model selection methods can screen and identify associated variables from regression variables. A simpler model with fewer variables is easier to understand in the real world. 
+Variable selection methods can screen and identify associated variables from regression variables. A simpler model with fewer variables is easier to understand in the real world. 
 
-The `modelselection` package uses Bayesian Information Criterion (BIC), Model Posterior Probability (MPP), and Posterior Inclusion Probability (PIP) to perform model selection for linear models (LM) and generalized linear models (GLM). The package provides the best model, BIC, and MPP for candidate models, and PIP for each predictor. This vignette contains an example to illustrate how to use `modelselection`. 
+The `VariableSelection` package uses Bayesian Information Criterion (BIC), Model Posterior Probability (MPP), and Posterior Inclusion Probability (PIP) to perform model selection for linear models (LM) and generalized linear models (GLM). The package provides the best model, BIC, and MPP for candidate models, and PIP for each predictor. This vignette contains an example to illustrate how to use `VariableSelection`. 
 
 
 ## Model
 
-The linear models used in the `modelselection` package are of the form
+The linear models used in the `VariableSelection` package are of the form
 $$ \pmb{Y}=X\pmb{\beta}+ \pmb{\epsilon},$$
 where
 
@@ -44,7 +44,7 @@ where
 * $\pmb{\epsilon}$ is the vector of errors.
 
 
-The generalized linear models used in the `modelselection` package assume that the observations come from a distribution that belongs to the exponential family of distributions. In addition, these GLMs assume that the mean of the observations is related to the covariates through a link function $g$ such that
+The generalized linear models used in the `VariableSelection` package assume that the observations come from a distribution that belongs to the exponential family of distributions. In addition, these GLMs assume that the mean of the observations is related to the covariates through a link function $g$ such that
 $$E(\pmb{Y}|X) = g^{-1}(X\pmb{\beta}),$$
 where
 
@@ -80,10 +80,10 @@ Lower value of BIC indicates a better model.
 
 ## Installation
 
-You can install `modelselect` from CRAN with:
+You can install `VariableSelection` from CRAN with:
 
 ```{r, warning=FALSE}
-install.packages("modelselection")
+install.packages("VariableSelection")
 ```
 
 
@@ -96,7 +96,7 @@ data("dat")
 head(dat,5)
 ```
 
-The data frame `dat` above is attached in the `modelselection` package. 
+The data frame `dat` above is attached in the `VariableSelection` package. 
  
 ## Formula
 
@@ -166,7 +166,7 @@ data("glmdat")
 head(glmdat,5)
 ```
 
-Data `glmdat` above are attached in the `modelselection` package. In the next example, we use the function `modelselect.glm` to find the best model and to compute the PIPs of the several candidate predictors.
+Data `glmdat` above are attached in the `VariableSelection` package. In the next example, we use the function `modelselect.glm` to find the best model and to compute the PIPs of the several candidate predictors.
 
 ```{r}
 example.glm <- modelselect.glm(formula = Y~., family = "binomial", data = glmdat)
@@ -188,7 +188,7 @@ summary(glm_model)
 
 # Functions
 
-In the `modelselection` package, there are four functions: `modelselect.lm()` and `lm.best()` for LM, and `modelselect.glm()` and `glm.best()` for GLM.
+In the `VariableSelection` package, there are four functions: `modelselect.lm()` and `lm.best()` for LM, and `modelselect.glm()` and `glm.best()` for GLM.
 
 * Function `modelselect.lm()` uses BIC to perform model selection for LMs. The function `modelselect.lm()` takes a formula for the full model and a data frame containing the response variable and predictor variables as input. It returns a list of two tables: 1. a table for candidate models with BIC and posterior probabilities; 2. a table for candidate variables with posterior inclusion probabilities. In addition, it returns the original data with variables in the formula.
 

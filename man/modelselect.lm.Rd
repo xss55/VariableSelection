@@ -2,7 +2,7 @@
 % Please edit documentation in R/modelselection_lm.R
 \name{modelselect.lm}
 \alias{modelselect.lm}
-\title{Title: Model selection for linear models}
+\title{Title: Variable selection for linear models}
 \usage{
 modelselect.lm(
   formula,
@@ -42,5 +42,5 @@ The specification \code{first*second} indicates the cross of \code{first} and \c
 The function \code{lm.best} is used to obtain the linear fitting to the best model by posterior probability or by controlling variables' posterior inclusion probabilities.}
 }
 \description{
-Description: use BIC to do model selection.
+Description: use BIC to do variable selection.
 }
