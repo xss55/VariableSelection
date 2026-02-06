@@ -113,7 +113,11 @@ modelselect.glm <- function(formula, data, family, GA_var=16, maxiterations = 20
             return(-bic)
           }
 
+        }else{
+          return(-Inf)
         }
+
+
       }
     }
 

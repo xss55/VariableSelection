@@ -111,7 +111,10 @@ modelselect.lm <- function(formula, data, GA_var=16, maxiterations = 2000, runs_
             return(-bic)
           }
 
+        }else{
+          return(-Inf)
         }
+
       }
     }
 

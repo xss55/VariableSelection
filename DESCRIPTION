@@ -1,6 +1,6 @@
 Package: VariableSelection
 Title: Select variables for linear models
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
     person("Shuangshuang", "Xu", ,"xshuangshuang@vt.edu", role = c("aut", "cre"))
 Description: The 'VariableSelection' package can select variables for linear models and generalized linear models. The 'VariableSelection' package uses Bayesian information criterion (BIC) and Model's posterior proability (MPP) as a criterion.
