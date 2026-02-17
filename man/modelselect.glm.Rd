@@ -12,7 +12,8 @@ modelselect.glm(
   maxiterations = 2000,
   runs_til_stop = 1000,
   monitor = TRUE,
-  popSize = 100
+  popSize = 100,
+  verbose = TRUE
 )
 }
 \arguments{
@@ -35,6 +36,8 @@ The specification \code{first*second} indicates the cross of \code{first} and \c
 \item{monitor}{a logical defaulting to TRUE showing the evolution of the search. If monitor = FALSE, any output is suppressed.}
 
 \item{popSize}{the population size.}
+
+\item{verbose}{Logical; if TRUE, print a brief summary of results.}
 }
 \value{
 \code{modelselect.glm} returns a list containing the following components:

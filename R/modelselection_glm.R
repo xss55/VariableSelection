@@ -14,6 +14,7 @@
 #' @param runs_til_stop 	the number of consecutive generations without any improvement in the best fitness value before the GA is stopped.
 #' @param monitor 	a logical defaulting to TRUE showing the evolution of the search. If monitor = FALSE, any output is suppressed.
 #' @param popSize the population size.
+#' @param verbose Logical; if TRUE, print a brief summary of results.
 #' @return `modelselect.glm` returns a list containing the following components:
 #'
 #' \describe{
@@ -26,7 +27,7 @@
 #'
 #' @export
 
-modelselect.glm <- function(formula, data, family, GA_var=16, maxiterations = 2000, runs_til_stop = 1000, monitor = TRUE, popSize = 100){
+modelselect.glm <- function(formula, data, family, GA_var=16, maxiterations = 2000, runs_til_stop = 1000, monitor = TRUE, popSize = 100, verbose = TRUE){
 
   if(is.null(formula)){
     stop("Please provide formula.")
@@ -184,9 +185,11 @@ modelselect.glm <- function(formula, data, family, GA_var=16, maxiterations = 20
   attr(var_pip, "id") <- "variables"
   attr(data, "id") <- response_name
 
-  cat("The Best Model:\n", colnames(model_bic_prob)[1:K][model_bic_prob[1,1:K] == 1], "\n")
-  cat("BIC:\n", model_bic_prob[1,K+1], "\n")
-  cat("MPP:\n", model_bic_prob[1,K+2])
+  if(verbose){
+    cat("The Best Model:\n", colnames(model_bic_prob)[1:K][model_bic_prob[1,1:K] == 1], "\n")
+    cat("BIC:\n", model_bic_prob[1,K+1], "\n")
+    cat("MPP:\n", model_bic_prob[1,K+2])
+  }
 
   invisible(list("models" = model_bic_prob, "variables" = var_pip, "data" = data))
 

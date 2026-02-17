@@ -71,11 +71,6 @@ glm.best <- function(object, family, method = "models", threshold = 0.95, x = FA
     fit$call <- call("glm", formula = stats::as.formula(paste0(response_name,"~", paste(fixedeffect_name, collapse ="+"))), family = family)
   }
 
-  cat("Call:\n")
-  print(fit$call)
-
-  cat("\nCoefficients:\n")
-  print(fit$coefficients)
   invisible(fit)
 
 }

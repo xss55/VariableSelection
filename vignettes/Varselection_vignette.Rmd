@@ -78,14 +78,6 @@ Lower value of BIC indicates a better model.
 
 # Example
 
-## Installation
-
-You can install `VariableSelection` from CRAN with:
-
-```{r, warning=FALSE}
-install.packages("VariableSelection")
-```
-
 
 ## Data
 

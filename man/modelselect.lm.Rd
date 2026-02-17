@@ -11,7 +11,8 @@ modelselect.lm(
   maxiterations = 2000,
   runs_til_stop = 1000,
   monitor = TRUE,
-  popSize = 100
+  popSize = 100,
+  verbose = TRUE
 )
 }
 \arguments{
@@ -31,7 +32,12 @@ The specification \code{first*second} indicates the cross of \code{first} and \c
 
 \item{monitor}{a logical defaulting to TRUE showing the evolution of the search. If monitor = FALSE, any output is suppressed.}
 
-\item{popSize}{the population size.#' @return \code{modelselect.lm} returns a list containing the following components:
+\item{popSize}{the population size.}
+
+\item{verbose}{Logical; if TRUE, print a brief summary of results.}
+}
+\value{
+\code{modelselect.lm} returns a list containing the following components:
 
 \describe{
 \item{\code{models}}{A data frame of candidate models' BIC and posterior probabilities, sorted by decreasing posterior probability}
@@ -39,7 +45,7 @@ The specification \code{first*second} indicates the cross of \code{first} and \c
 \item{\code{data}}{The data with variables in the formula.}
 }
 
-The function \code{lm.best} is used to obtain the linear fitting to the best model by posterior probability or by controlling variables' posterior inclusion probabilities.}
+The function \code{lm.best} is used to obtain the linear fitting to the best model by posterior probability or by controlling variables' posterior inclusion probabilities.
 }
 \description{
 Description: use BIC to do variable selection.

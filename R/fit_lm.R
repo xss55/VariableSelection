@@ -56,12 +56,6 @@ lm.best <- function(object, method = "models", threshold = 0.95, x = FALSE, y = 
     fit$call <- call("lm", stats::as.formula(paste0(response_name,"~", paste(fixedeffect_name, collapse ="+"))))
   }
 
-
-  cat("Call:\n")
-  print(fit$call)
-
-  cat("\nCoefficients:\n")
-  print(fit$coefficients)
   invisible(fit)
 
 }
